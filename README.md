@@ -1,3 +1,34 @@
+相关文档
+https://support.google.com/a/answer/174124?hl=zh-Hans
+https://service.mail.qq.com/detail/0/62
+https://www.secrss.com/articles/49389
+
+
+body-hash:是使用哈希算法哈希主体的输出值
+
+hash-alg:是“a”参数指定的哈希算法
+
+canon-body:主体的规范化表示，按“c”参数指定的规范化算法生成的，排除DKIM签名字段。
+
+l-param:是“l”参数的值，主体的长度。
+
+data-hash:使用hash-alg算法哈希头部的输出，包括DKIM签名头部和主体哈希值。
+
+h-headers:“h”参数指定的被签名的头字段列表。
+
+D-SIG:规范化的DKIM签名字段，去除参数签名值部分即为一个空的参数值。
+
+signature:签名算法生成的签名值
+
+sig-alg:“a”参数指定的签名算法。
+
+d-domain:“d”参数指定的域名
+
+selector:“s”参数指定的selector值。
+
+注意：许多数字签名API提供RSA私钥的哈希和应用，使用原始的“sign()”。当使用这样的API时，算法的最后两个步骤可能会合并成一个调用，执行“a-hash-alg”和“sig-alg”。
+
+
 # 安装
 pip3 install -r requirements.txt
 
